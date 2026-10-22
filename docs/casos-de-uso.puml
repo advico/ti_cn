@@ -1,0 +1,25 @@
+@startuml
+top to bottom direction
+actor "Operador do estoque" as Operador
+rectangle "Estoque TI — CN" {
+  usecase "Cadastrar produto" as Cadastrar
+  usecase "Consultar produtos" as Consultar
+  usecase "Editar cadastro" as Editar
+  usecase "Excluir cadastro vazio" as Excluir
+  usecase "Receber estoque" as Receber
+  usecase "Dar baixa por entrega" as Entregar
+  usecase "Consultar histórico" as Historico
+}
+Operador -- Cadastrar
+Operador -- Consultar
+Operador -- Editar
+Operador -- Excluir
+Operador -- Receber
+Operador -- Entregar
+Operador -- Historico
+note bottom of Entregar
+  Destinatário/setor obrigatórios.
+  Número do chamado opcional.
+  Saldo e histórico gravados juntos.
+end note
+@enduml
